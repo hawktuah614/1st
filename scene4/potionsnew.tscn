@@ -1,0 +1,87 @@
+[gd_scene load_steps=13 format=3 uid="uid://bghus5nctlecg"]
+
+[ext_resource type="Texture2D" uid="uid://bksc2c38sef47" path="res://poção vermelha meio vazia.png" id="1_qnk6o"]
+[ext_resource type="Script" uid="uid://cvt3m1whwcsr1" path="res://scene4/potionsnew.gd" id="1_qxd73"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qxd73"]
+atlas = ExtResource("1_qnk6o")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vawf2"]
+atlas = ExtResource("1_qnk6o")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yq8y5"]
+atlas = ExtResource("1_qnk6o")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_we4so"]
+atlas = ExtResource("1_qnk6o")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t0vpm"]
+atlas = ExtResource("1_qnk6o")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bwukh"]
+atlas = ExtResource("1_qnk6o")
+region = Rect2(32, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ryblv"]
+atlas = ExtResource("1_qnk6o")
+region = Rect2(0, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pnvc8"]
+atlas = ExtResource("1_qnk6o")
+region = Rect2(16, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1abiv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qxd73")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vawf2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yq8y5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_we4so")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t0vpm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bwukh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ryblv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pnvc8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_p4gjl"]
+radius = 9.30798
+
+[node name="potionsnew" type="Area2D"]
+script = ExtResource("1_qxd73")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-1, 0)
+scale = Vector2(3.0625, 2.6875)
+sprite_frames = SubResource("SpriteFrames_1abiv")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+scale = Vector2(3.0625, 2.6875)
+shape = SubResource("CircleShape2D_p4gjl")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

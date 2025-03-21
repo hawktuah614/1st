@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://cjudnwrtv7361"]
+
+[ext_resource type="Texture2D" uid="uid://l0gmr1akpeg6" path="res://Idle.png" id="1_mc3lg"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hseo3"]
+atlas = ExtResource("1_mc3lg")
+region = Rect2(0, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tmhn"]
+atlas = ExtResource("1_mc3lg")
+region = Rect2(150, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxe8k"]
+atlas = ExtResource("1_mc3lg")
+region = Rect2(300, 0, 150, 150)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdu6g"]
+atlas = ExtResource("1_mc3lg")
+region = Rect2(450, 0, 150, 150)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qjp2d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hseo3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tmhn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxe8k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xdu6g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nx76q"]
+size = Vector2(22, 41)
+
+[node name="enemy hitler" type="RigidBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(-4, 0)
+sprite_frames = SubResource("SpriteFrames_qjp2d")
+frame_progress = 0.832978
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-4, 8)
+shape = SubResource("RectangleShape2D_nx76q")
