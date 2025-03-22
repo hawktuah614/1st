@@ -64,7 +64,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_p4gjl"]
@@ -78,6 +78,8 @@ texture_filter = 1
 position = Vector2(-1, 0)
 scale = Vector2(3.0625, 2.6875)
 sprite_frames = SubResource("SpriteFrames_1abiv")
+autoplay = "default"
+frame_progress = 0.394687
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)
