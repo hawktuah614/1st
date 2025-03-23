@@ -329,21 +329,21 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_stcel"]
-size = Vector2(36.2069, 29.5281)
+size = Vector2(27.5172, 22.4194)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_stcel")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-position = Vector2(11, 18)
-scale = Vector2(2.07143, 1.82877)
+position = Vector2(18.5, 16)
+scale = Vector2(1.6125, 1.47573)
 sprite_frames = SubResource("SpriteFrames_k3iqd")
 animation = &"slash"
 autoplay = "idle"
 frame_progress = 0.0532544
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4.50009, 31)
+position = Vector2(12.5, 24.5)
 scale = Vector2(2.07143, 1.82877)
 shape = SubResource("RectangleShape2D_stcel")
